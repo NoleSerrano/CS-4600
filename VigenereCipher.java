@@ -12,6 +12,7 @@ public class VigenereCipher {
 			System.out.println("(2) Decrypt a cipher");
 			System.out.println("(3) Exit program");
 			System.out.print("Input: ");
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			int choice = sc.nextInt();
 			sc.nextLine();
@@ -28,9 +29,9 @@ public class VigenereCipher {
 				String k = sc.nextLine();
 				System.out.println("Message: " + decrypt(c, k) + "\n");
 			} else {
+				sc.close();
 				break;
 			}
-			sc.close();
 		}
 	}
 
